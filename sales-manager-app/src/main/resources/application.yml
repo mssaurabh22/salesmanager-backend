@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: sales-manager-app
+  datasource:
+    url: jdbc:postgresql://pg-salesmanager-mssaurabh22-4fb3.a.aivencloud.com:15066/defaultdb
+    username: avnadmin
+    password: AVNS_KZ5uEq8O9bIdjsXconr
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+server:
+  port: 8081
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+jwt:
+  secret: thisIsMySalesMnagerKeYToHelpSalesPersonTHisIsCreatedByPankajPanKajIsSaurabHBroTHImToBuildThiSA$$
+  access-token-expiry: 900000
+  refresh-token-expiry: 86400000

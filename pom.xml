@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.crm</groupId>
+  <artifactId>salesmanager</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+
+  <name>Sales Manager Parent</name>
+  <modules>
+    <module>sales-manager-app</module>
+    <module>common-lib</module>
+    <module>authentication</module>
+    <module>user</module>
+    <module>timeline-module</module>
+    <module>lead-module</module>
+    <module>activity-module</module>
+    <module>followup-module</module>
+    <module>dashboard-module</module>
+    <module>report-module</module>
+  </modules>
+
+  <properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>17</java.version>
+    <jjwt.version>0.12.5</jjwt.version>
+    <mapstruct.version>1.5.5.Final</mapstruct.version>
+    <springdoc.version>2.8.13</springdoc.version>
+    <swagger.annotations.version>2.2.36</swagger.annotations.version>
+  </properties>
+
+    <!-- Spring Boot BOM -->
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.5.13</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+
+    <!-- Dependency Management (IMPORTANT) -->
+    <dependencyManagement>
+      <dependencies>
+        <!-- JWT -->
+        <dependency>
+          <groupId>io.jsonwebtoken</groupId>
+          <artifactId>jjwt-api</artifactId>
+          <version>${jjwt.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>io.jsonwebtoken</groupId>
+          <artifactId>jjwt-impl</artifactId>
+          <version>${jjwt.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>io.jsonwebtoken</groupId>
+          <artifactId>jjwt-jackson</artifactId>
+          <version>${jjwt.version}</version>
+        </dependency>
+        <!-- common-lib internal -->
+        <dependency>
+          <groupId>org.crm</groupId>
+          <artifactId>common-lib</artifactId>
+          <version>${project.version}</version>
+        </dependency>
+          <dependency>
+              <groupId>org.crm</groupId>
+              <artifactId>user</artifactId>
+              <version>${project.version}</version>
+          </dependency>
+        <dependency>
+          <groupId>org.mapstruct</groupId>
+          <artifactId>mapstruct</artifactId>
+          <version>${mapstruct.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>org.springdoc</groupId>
+          <artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
+          <version>${springdoc.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>org.springdoc</groupId>
+          <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+          <version>${springdoc.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>io.swagger.core.v3</groupId>
+          <artifactId>swagger-annotations-jakarta</artifactId>
+          <version>${swagger.annotations.version}</version>
+        </dependency>
+        <!-- Source: https://mvnrepository.com/artifact/jakarta.validation/jakarta.validation-api -->
+        <dependency>
+          <groupId>jakarta.validation</groupId>
+          <artifactId>jakarta.validation-api</artifactId>
+          <version>3.1.1</version>
+          <scope>compile</scope>
+        </dependency>
+      </dependencies>
+    </dependencyManagement>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

@@ -3,7 +3,7 @@ spring:
     name: sales-manager-app
   datasource:
     url: 
-    username: avnadmin
+    username: 
     password: 
     driver-class-name: org.postgresql.Driver
   jpa:
@@ -27,6 +27,6 @@ management:
       show-details: always
 
 jwt:
-  secret: thisIsMySalesMnagerKeYToHelpSalesPersonTHisIsCreatedByPankajPanKajIsSaurabHBroTHImToBuildThiSA$$
+  secret: 
   access-token-expiry: 900000
   refresh-token-expiry: 86400000

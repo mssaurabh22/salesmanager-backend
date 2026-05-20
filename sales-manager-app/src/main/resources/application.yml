@@ -2,9 +2,9 @@ spring:
   application:
     name: sales-manager-app
   datasource:
-    url: jdbc:postgresql://pg-salesmanager-mssaurabh22-4fb3.a.aivencloud.com:15066/defaultdb
+    url: 
     username: avnadmin
-    password: AVNS_KZ5uEq8O9bIdjsXconr
+    password: 
     driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
